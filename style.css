@@ -1,38 +1,94 @@
-body{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-.keyboard{
-    border: 2px solid black;
-    padding: 5px;
-    display: block;
-    margin: 0 auto;
-    overflow: hidden;
-}
-
-.clearfix{
-    clear: both;
-}
-
 .textarea{
-    margin: 30px auto;
     display: block;
     height: 150px;
     width: 700px;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -91%);
+    top: 50%;
 }
 
-.key{
-    width: 50px;
-    height: 50px;
+.info-block{
+    width: 700px;
+    height: 150px;
+    background: rgba(0, 0, 0, 0.2);
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -222%);
+    top: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+}
+
+.keyboard {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    padding: 5px 0;
+    background: #0c5776;
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
+    user-select: none;
+    transition: bottom 0.4s;
+}
+
+.keyboard--hidden {
+    bottom: -100%;
+}
+
+.keyboard__keys {
+    text-align: center;
+}
+
+.keyboard__key {
+    height: 45px;
+    width: 45px;
     margin: 3px;
-    padding: 3px;
-    float: left;
-    border: 1px solid black;
-    border-radius: 5px;
+    border-radius: 4px;
+    border: none;
+    background: rgba(255, 255, 255, 0.2);
+    color: #ffffff;
+    font-size: 1.05rem;
+    outline: none;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    vertical-align: top;
+    padding: 0;
+    -webkit-tap-highlight-color: transparent;
+    position: relative;
 }
 
-.double-btn{
+.keyboard__key:active {
+    background: rgba(255, 255, 255, 0.12);
+}
+
+.keyboard__key--wide {
     width: 100px;
+}
+
+.keyboard__key--extra-wide {
+    width: 406px;
+}
+
+.keyboard__key--not-active::after {
+    content: '';
+    top: 8px;
+    right: 8px;
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 50%;
+}
+
+.keyboard__key--active::after {
+    background: #08ff00;
+}
+
+.keyboard__key--dark {
+    background: rgba(0, 0, 0, 0.25);
 }
